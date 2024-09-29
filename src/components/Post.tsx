@@ -30,6 +30,7 @@ interface PostProps {
 }
 
 export function Post({ post }: PostProps) {
+  console.log('post:', post);
   const [comments, setComments] = useState([
     'Post muito bacana, hein?!'
   ]);
@@ -47,7 +48,7 @@ export function Post({ post }: PostProps) {
 
   function handleCrateNewComment(event: FormEvent) {
     event.preventDefault()
-
+    console.log('new comment:', post);
     setComments([...comments, newCommentText]);
     setNewCommentText('');
   }
